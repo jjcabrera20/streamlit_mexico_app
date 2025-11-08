@@ -267,7 +267,7 @@ st.info(t['map_info'].format(len(filtered_for_map)))
 
 with st.spinner('Loading map...'):
     m = create_map(filtered_for_map, center_lat, center_lon, t['click_to_copy'])
-    st_folium(m, width=900, height=600, returned_objects=[])
+    st_folium(m, returned_objects=[])
 
 
 # ---------------------------------------------------------
