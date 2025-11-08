@@ -226,11 +226,11 @@ NOMBRE_DE_CENTRO_DE_TRABAJO = "nombre_de_centro_de_trabajo"
 NOMBRE_LOCALIDAD = "nombre_localidad"
 
 # Departamento options
-departamentos = [""] + sorted(gdf[DEPARTAMENTO_FIELD].dropna().unique().tolist())
+departamentos = sorted(gdf[DEPARTAMENTO_FIELD].dropna().unique().tolist())
 admin1 = st.sidebar.selectbox(t['departamento'], departamentos, index=0)
 
 if admin1:
-    municipios = [""] + sorted(gdf[gdf[DEPARTAMENTO_FIELD] == admin1][MUNICIPIO_FIELD].dropna().unique().tolist())
+    municipios = sorted(gdf[gdf[DEPARTAMENTO_FIELD] == admin1][MUNICIPIO_FIELD].dropna().unique().tolist())
     admin2 = st.sidebar.selectbox(t['municipio'], municipios, index=0)
 
     if admin2:
