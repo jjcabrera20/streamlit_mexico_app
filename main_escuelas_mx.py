@@ -9,6 +9,14 @@ import json
 from pathlib import Path
 from html import escape
 
+# Page configuration - MUST be first Streamlit command
+st.set_page_config(
+    page_title="Escuelas México",
+    page_icon="🏫",
+    layout="wide",  # Enable wide mode
+    initial_sidebar_state="expanded"
+)
+
 # ---------------------------------------------------------
 # 0. Language configuration
 # ---------------------------------------------------------
