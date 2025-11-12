@@ -26,6 +26,7 @@ TRANSLATIONS = {
         'subtitle': 'Explore **{:,}** school points with filtering and sorting.',
         'map_filters': '🎛️ Map Filters',
         'centro_trabajo_codigo': 'Working center code',
+        'domicilio': 'Address',
         'departamento': 'State',
         'municipio': 'Municipality',
         'select_first': 'Select State first',
@@ -55,6 +56,7 @@ TRANSLATIONS = {
         'subtitle': 'Explora **{:,}** puntos de escuelas con filtrado y ordenamiento.',
         'map_filters': '🎛️ Filtros de Mapa',
         'centro_trabajo_codigo': 'Código centro de trabajo',
+        'domicilio': 'Domicilio',
         'departamento': 'Entidad',
         'municipio': 'Municipio',
         'select_first': 'Selecciona Entidad primero',
@@ -168,6 +170,7 @@ DEPARTAMENTO_FIELD = "nombre_entidad"
 MUNICIPIO_FIELD = "nombre_municipio"
 NOMBRE_DE_CENTRO_DE_TRABAJO = "nombre_de_centro_de_trabajo"
 NOMBRE_LOCALIDAD = "nombre_localidad"
+DOMICILIO_COMPLETO = "domicilio_completo"
 
 departamentos = sorted(gdf[DEPARTAMENTO_FIELD].dropna().unique().tolist())
 admin1 = st.sidebar.selectbox(t['departamento'], departamentos, index=0)
@@ -222,7 +225,8 @@ column_display_names = {
     DEPARTAMENTO_FIELD: t['departamento'],
     MUNICIPIO_FIELD: t['municipio'],
     NOMBRE_LOCALIDAD: t['locality'],
-    NOMBRE_DE_CENTRO_DE_TRABAJO: t['name']
+    NOMBRE_DE_CENTRO_DE_TRABAJO: t['name'],
+    DOMICILIO_COMPLETO: t['domicilio']
 }
 
 display_columns = [
@@ -230,7 +234,8 @@ display_columns = [
     DEPARTAMENTO_FIELD,
     MUNICIPIO_FIELD,
     NOMBRE_LOCALIDAD,
-    NOMBRE_DE_CENTRO_DE_TRABAJO
+    NOMBRE_DE_CENTRO_DE_TRABAJO,
+    DOMICILIO_COMPLETO
 ]
 
 table_df = table_df[display_columns].copy()
