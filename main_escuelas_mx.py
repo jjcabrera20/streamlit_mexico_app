@@ -294,3 +294,4 @@ with col2:
         file_name=f"schools_page_{page}.csv",
         mime="text/csv",
     )
+st.write("Fuente/Source: https://siged.sep.gob.mx/SIGED/mapas.html")
